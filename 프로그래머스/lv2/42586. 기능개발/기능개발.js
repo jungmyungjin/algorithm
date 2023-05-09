@@ -1,7 +1,6 @@
 function solution(progresses, speeds) {
     let answer = [];
-    let working = progresses;
-    let workload = speeds;
+    let [working,workload] = [progresses, speeds];
     if (progresses.length !== speeds.length)
         return answer;
     

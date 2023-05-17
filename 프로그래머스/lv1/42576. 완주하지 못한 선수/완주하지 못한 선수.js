@@ -1,24 +1,34 @@
 function solution(participant, completion) {
-    const playerCount = {};
+    var answer ='';
+    let participants = {};
+    
+    // 플레이어 해시화
+    for (let i=0; i<participant.length; i++)
+    {
+        if (participants.hasOwnProperty(participant[i]))
+        {
+            participants[participant[i]] += 1;
 
-for (let i = 0; i < participant.length; i++) {
-  const player = participant[i];
-  if (Object.hasOwnProperty.call(playerCount, player)) {
-    playerCount[player] += 1;
-  } else {
-    playerCount[player] = 1;
-  }
-}
+        }
+        else
+        {
+             participants[participant[i]] = 1;
 
-for (let i = 0; i < completion.length; i++) {
-  const finishedPlayer = completion[i];
-  playerCount[finishedPlayer] -= 1;
-  if (playerCount[finishedPlayer] === 0) {
-    delete playerCount[finishedPlayer];
-  }
-}
+        }
+    }
 
-const answer = Object.keys(playerCount).join('');
-
+    
+    // 완주한 플레이어 체크
+    for (let i=0; i<completion.length; i++)
+    {
+        participants[completion[i]] -= 1;
+        if (participants[completion[i]] === 0)
+        {
+            delete participants[completion[i]];
+        }
+    }
+    answer = Object.keys(participants).join('');
+    
+    
     return answer;
 }

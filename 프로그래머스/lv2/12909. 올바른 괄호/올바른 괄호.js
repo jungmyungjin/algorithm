@@ -1,7 +1,3 @@
-
-
-
-
 function solution(s){
     let stacks = [];
 

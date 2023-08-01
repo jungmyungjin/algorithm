@@ -6,17 +6,7 @@ function getFactors (number)
     if(number === 1)
         return [[1,1]]
     
-    // for(let i=1; i<=Math.floor(number/2); i++)
-    // {
-    //     for(let j=number; i <= j; j--)
-    //     {
-    //         if(i*j === number)
-    //         {
-    //             result.push([j,i]); //(가로, 세로)
-    //         }
-    //     }
-    // }
-     for (let i = 1; i * i <= number; i++) {
+     for (let i = 1; i ** 2 <= number; i++) {
         if (number % i == 0) {
             result.push([number / i, i]);
         }

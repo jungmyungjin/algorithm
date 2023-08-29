@@ -1,5 +1,4 @@
 function dayOfWeek(startDay, days) {
-  // days = parseInt(days);
   const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   var deduplicatedDays = startDay,
     resultDay = "";
